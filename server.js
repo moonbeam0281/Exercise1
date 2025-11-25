@@ -17,7 +17,7 @@ mongoose.connect(/*Nemav vere za da configuriram databaza*/"mongodb://localhost:
 
 app.get("/faculties", async (req, res) => {
     const faculties = await Faculty.find().populate("university");
-    res.render("faculties/index", { faculties });
+    res.render("index", { faculties });
 });
 
 app.get("/faculties/new", async (req, res) => {

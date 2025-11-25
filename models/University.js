@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
-const UniScheme = new mongoose.Schema({
-    name: {type: String, require: true},
-    address: {type: String}
+const UniSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  address: { type: String }
 });
 
-const University = mongoose.model("University", UniScheme);
+const University = mongoose.model("University", UniSchema);
 export default University;
