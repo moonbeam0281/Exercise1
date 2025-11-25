@@ -1,0 +1,15 @@
+<h1>Faculties</h1>
+
+<a href="/faculties/new">Create Faculty</a>
+
+<ul>
+  <% faculties.forEach(f => { %>
+    <li>
+      <%= f.name %> — <%= f.university ? f.university.name : "" %>
+      <a href="/faculties/<%= f._id %>/edit">Edit</a>
+      <form action="/faculties/<%= f._id %>/delete" method="POST" style="display:inline;">
+        <button>Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

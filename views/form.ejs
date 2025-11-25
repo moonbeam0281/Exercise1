@@ -1,0 +1,23 @@
+<h1><%= faculty ? "Edit Faculty" : "New Faculty" %></h1>
+
+<form action="<%= formAction %>" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name" value="<%= faculty ? faculty.name : "" %>" required><br>
+
+  <label>Address:</label>
+  <input type="text" name="address" value="<%= faculty ? faculty.address : "" %>"><br>
+
+  <label>University:</label>
+  <select name="universityId" required>
+    <% universities.forEach(u => { %>
+      <option value="<%= u._id %>"
+        <%= faculty && faculty.university?.toString() === u._id.toString() ? "selected" : "" %> >
+        <%= u.name %>
+      </option>
+    <% }) %>
+  </select><br>
+
+  <button type="submit">Save</button>
+</form>
+
+<a href="/faculties">Back</a>
